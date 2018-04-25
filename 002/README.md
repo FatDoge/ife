@@ -1,6 +1,8 @@
 ### 安装依赖
 > npm install
-### 运行
+### start
 > parcel index.html
-### 生产模式
+### dev
+> npm run dev
+### build
 > parcel build index.html
