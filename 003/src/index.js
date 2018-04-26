@@ -5,14 +5,14 @@ var MyApp = san.defineComponent({
     template:` 
     <div>
         <input type="text" value="{= info.name =}" placeholder="姓名">
-        <input type="text" value="{= Number(info.age)?Number(info.age):'' =}" placeholder="年龄">
+        <input type="text" value="{= info.age =}" placeholder="年龄">
         <input type="text" value="{= info.des =}" placeholder="简介">
         <div>
             信息:<button on-click="cleanInfo">移除信息</button>
         </div>
         <ul>
             <li>姓名:<span>{{info.name}}</span></li>
-            <li>年龄:<span>{{Number(info.age)?Number(info.age):''}}</span></li>
+            <li>年龄:<span>{{info.age}}</span></li>
             <li>简介:<span>{{info.des}}</span></li>
         </ul>  
     </div>
@@ -23,7 +23,7 @@ var MyApp = san.defineComponent({
         return {
             info:{
                 name: '',
-                age: 0,
+                age: '',
                 des: ''
             },
         };
@@ -31,7 +31,7 @@ var MyApp = san.defineComponent({
 // 移除事件
     cleanInfo:function(){
         this.data.set('info.name','');
-        this.data.set('info.age', 0);
+        this.data.set('info.age', '');
         this.data.set('info.des', '');
     },
 //数据校验    
