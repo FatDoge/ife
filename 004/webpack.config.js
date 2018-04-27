@@ -18,7 +18,5 @@ module.exports = {
             }
         ]
     },
-    plugins: [new HtmlWebpackPlugin({
-        title:'ife'
-    })]
+    plugins: [new HtmlWebpackPlugin()]
 };
