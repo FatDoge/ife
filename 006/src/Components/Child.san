@@ -1,0 +1,30 @@
+<template>
+<div>
+    <span>子组件:</span>
+    <input type="text" value="{=input=}">
+    <button on-click="notify">通知父组件</button>
+</div>
+</template>
+<script>
+// export default {
+//     notify() {
+//         this.dispatch('UI:child-submitted',this.data.get('input));
+//     },
+//     inited() {
+//         this.data.set('input',undefined);
+//     }
+// }
+export default {
+    notify() {
+        // emit a message 'UI:child-submitted' to the parent component
+        this.dispatch('UI:child-submitted', this.data.get('input'));
+    },
+    inited() {
+        // set input data to be empty when initialized
+        this.data.set('input', undefined);
+    }
+}
+</script>
+<style>
+
+</style>

@@ -1,0 +1,36 @@
+<template>
+    <div>
+        <ui-parent value="{{value}}"></ui-parent>
+        <div id="grandParent">
+            <span>我是更高层父组件:</span>
+            <input  value="{=value=}">
+        </div>
+    </div>
+</template>
+<script>
+import Parent from './Parent.san';
+export default {
+    components: {
+        'ui-parent':Parent
+    },
+    initData() {
+        return{
+            value:'我也静静等待用户输入'
+        }
+    },
+    messages: {
+        'UI:parent-notified'(msg) {
+            this.data.set('value', msg.value);
+            this.data.set('changed', true);
+        }
+    }
+}
+</script>
+<style>
+#grandParent,#grandParent input,#grandParent span{
+    color:#E91E63;
+}
+#grandParent input{
+    border:none;
+}
+</style>

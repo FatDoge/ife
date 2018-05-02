@@ -1,0 +1,38 @@
+<template>
+    <div>
+        <ui-child input="{{value}}"></ui-child>
+        <div id="parent">
+            <span>我是父组件:</span>
+            <input type="text" value="{=value=}">
+        </div>
+    </div>
+</template>
+<script>
+import Child from './Child.san';
+export default{
+    components:{
+        'ui-child':Child
+    },
+    initData(){
+        return{
+            value:'静静等待用户输入'
+        }
+    },
+     messages: {
+        'UI:child-submitted'(msg) {
+            this.data.set('value', msg.value);
+            this.data.set('changed', true);
+            // emit a message 'UI:parent-notified' to the parent component
+            this.dispatch('UI:parent-notified', msg.value);
+        }
+    }
+}
+</script>
+<style>
+#parent,#parent input,#parent span{
+    color:#2196F3;
+}
+#parent input{
+    border:none;
+}
+</style>

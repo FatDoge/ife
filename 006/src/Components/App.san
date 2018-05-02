@@ -1,0 +1,16 @@
+<template>
+    <div>
+        <ui-grandparent></ui-grandparent>
+    </div>
+</template>
+<script>
+import GrandParent from './GrandParent.san';
+export default{
+    components:{
+        'ui-grandparent':GrandParent
+    },
+}
+</script>
+<style>
+
+</style>
