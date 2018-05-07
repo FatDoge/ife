@@ -7,3 +7,5 @@
 > [任务4](https://fatdoge.github.io/ife/004/dist/)
 
 > [任务5](https://fatdoge.github.io/ife/005/dist/)
+
+> [任务6](https://fatdoge.github.io/ife/006/dist/)
